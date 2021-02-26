@@ -183,15 +183,14 @@ class HomeActivity : AppCompatActivity(){
     private fun phaseCheck(currentday: String) {
         when {
             currentday.toInt() in 0..30 -> {
-                Toast.makeText(this, "Phase 1", Toast.LENGTH_SHORT).show()
+
             }
             currentday.toInt() in 30..60 -> {
-                Toast.makeText(this, "Phase 2", Toast.LENGTH_SHORT).show()
+
 
             }
             currentday.toInt() in 60..90 -> {
 
-                Toast.makeText(this, "Phase 3", Toast.LENGTH_SHORT).show()
             }
         }
     }

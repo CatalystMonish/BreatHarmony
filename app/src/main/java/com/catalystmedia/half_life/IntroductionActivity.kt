@@ -28,6 +28,9 @@ class IntroductionActivity : AppCompatActivity() {
         btn_next.visibility = View.VISIBLE
 
 
+
+        
+
         btn_next.setOnClickListener {
             count++
             checkCount()
