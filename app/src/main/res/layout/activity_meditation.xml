@@ -9,7 +9,8 @@
     android:layout_height="match_parent"
     tools:context=".MeditationActivity">
     <LinearLayout
-        android:background="#161d6f"
+        android:id="@+id/ll_top"
+        android:background="@color/dark_blue_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -35,120 +36,130 @@
             android:fontFamily="@font/nexab"/>
     </LinearLayout>
     <TextView
+        android:layout_above="@+id/ll_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textSize="22dp"
-        android:layout_marginStart="10dp"
-        android:textColor="@color/dark"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/new_text_light"
         android:fontFamily="@font/nexab"
-        android:text="How much time would you like to meditate today?"/>
+        android:text="How long would you Meditate\nToday? "/>
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+
     <TextView
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:textColor="@color/dark"
+        android:textColor="#565656"
         android:id="@+id/tv_timer"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="02:00"
+        android:text="02"
         android:textSize="60dp"
         android:textAlignment="center"
-        android:fontFamily="@font/main"/>
-        <ImageView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="center"
-            android:id="@+id/ib_chng_time"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_swap_line"
-            app:tint="@color/dark" />
-
-        <Space
+        android:fontFamily="@font/nexab"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="bottom"
+            android:textColor="#565656"
+            android:layout_gravity="bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:text="min"
+            android:textSize="20dp"
+            android:fontFamily="@font/nexab"/>
     </LinearLayout>
+
     <TextView
-        android:id="@+id/tv_recommended"
+        android:id="@+id/ib_chng_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:textAlignment="center"
         android:textColor="@color/lightgray"
         android:fontFamily="@font/nexab"
-        android:text="Recommended        "/>
-    <LinearLayout
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
+        android:text="Click here to change time"/>
+    <View
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/lightgray"/>
     <TextView
-        android:layout_weight="1"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:textColor="@color/dark"
+        android:textColor="@color/darkshade"
         android:fontFamily="@font/nexab"
         android:text="Background Music" />
-    <Spinner
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        android:padding="30dp"
-        android:layout_weight="2"
+    <org.angmarch.views.NiceSpinner
+        android:textSize="18dp"
+        app:textTint="@color/darkshade"
+        android:fontFamily="@font/nexab"
+        app:popupTextAlignment="start"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:id="@+id/music_spinner"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"/>
     <TextView
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:textColor="@color/dark"
+        android:textColor="@color/darkshade"
         android:fontFamily="@font/nexab"
         android:text="Meditation Theme"/>
-        <Spinner
-            android:padding="30dp"
-            android:gravity="center"
-            android:layout_weight="2"
+        <org.angmarch.views.NiceSpinner
+            android:textSize="18dp"
+           app:textTint="@color/darkshade"
+            android:fontFamily="@font/nexab"
+            app:popupTextAlignment="start"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/theme_spinner"
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"/>
-    </LinearLayout>
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     <Space
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/nexab"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/new_text_light"
+        android:text="Get more Themes and Music, by Rating us on the Play Store!"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:padding="5dp"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/white"
+        android:drawableBottom="@drawable/ic_baseline_play_arrow_24"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_gravity="center"
+        android:text="START"
         android:id="@+id/btn_begin"
         android:fontFamily="@font/nexab"
-        app:backgroundTint="@color/lightgray"
-        android:text=" BEGIN"
-        android:textAlignment="center"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:background="@drawable/home_middle"/>
+
 </LinearLayout>

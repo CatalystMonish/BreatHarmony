@@ -7,15 +7,19 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/new_gray"/>
 <LinearLayout
-    android:background="#161d6f"
+    android:background="@drawable/home_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -36,63 +40,39 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="Good Morning, User"
-        android:textSize="19dp" />
+        android:text="Hi, User Surname"
+        android:textSize="22dp" />
     <ImageButton
-        android:tint="@color/light"
         android:id="@+id/btn_settings"
-        android:layout_width="30dp"
-        android:layout_marginEnd="25dp"
-        android:scaleType="centerCrop"
-        android:layout_height="30dp"
-        android:background="#161d6f"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_baseline_history_24"/>
-</LinearLayout>
-    <TextView
-        android:background="@drawable/days_bg"
-        android:id="@+id/tv_days"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:layout_width="wrap_content"
+        android:backgroundTint="@color/dark_blue_app"
         android:layout_height="wrap_content"
-        android:text="DAY 00"
-        android:textColor="@color/light"
-        android:textSize="22dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/main"/>
-    <LinearLayout
-        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_login_bg"
+        android:tint="@color/white"
+        android:layout_marginEnd="20dp"/>
+</LinearLayout>
+
+            </FrameLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+    <TextView
+        android:padding="10dp"
+        android:background="@drawable/days_bg_new"
+        android:id="@+id/tv_days"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/tv_tree_growth"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="Tree Growth"
-            android:textColor="#353535"
-            android:textSize="17dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/main"/>
-        <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
-            android:id="@+id/progress_tree"
-            android:layout_marginTop="3dp"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="100dp"
-            android:layout_height="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="30dp"
-            android:maxHeight="30dp"
-            android:minHeight="20dp"
-            android:progress="0"
-            app:backgroundColor="#DADADA"
-            app:progressColor="#008446"/>
-    </LinearLayout>
+        android:text="Day 00"
+        android:textColor="@color/new_text_light"
+        android:textSize="22dp"
+        android:fontFamily="@font/nexab"/>
+
             <FrameLayout
                 android:gravity="center"
                 android:layout_gravity="center"
@@ -110,66 +90,152 @@
                     android:id="@+id/tv_init"
                     android:fontFamily="@font/nexab"
                     android:layout_gravity="center"
-                    android:textSize="20sp"
+                    android:textSize="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="Your Tree Will Start\nGrowing Soon!"
+                    android:text="Loading.."
                     android:textColor="@color/lightgray"/>
+
             </FrameLayout>
 
-    <TextView
-        android:id="@+id/tv_goals"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Goals For Today"
-        android:textColor="#353535"
-        android:textSize="23dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/main"/>
-    <LinearLayout
-        android:layout_marginEnd="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <TextView
-        android:id="@+id/tv_meditation"
-        android:layout_width="match_parent"
-        android:textColor="#6D6C6C"
-        android:layout_height="wrap_content"
-        android:text="Meditation 2mins"
-        android:textSize="20dp"
-        android:layout_weight="1"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/main"/>
-        <ImageView
-            android:visibility="gone"
-            android:scaleType="centerInside"
-            android:id="@+id/meditation_check"
-            android:layout_gravity="center"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_check"/>
-    </LinearLayout>
-    <Space
+                <LinearLayout
+                    android:id="@+id/ll_growth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_tree_growth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginEnd="19dp"
+                        android:fontFamily="@font/nexab"
+                        android:text="loading%"
+                        android:textAlignment="textEnd"
+                        android:textColor="#318C42"
+                        android:textSize="17dp" />
+
+                    <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
+                        android:id="@+id/progress_tree"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="19dp"
+                        android:maxHeight="30dp"
+                        android:minHeight="20dp"
+                        android:progress="0"
+                        app:backgroundColor="#DFDFDF"
+                        app:progressColor="#318C42" />
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/new_text_light"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/u_stats_u"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nexab"
+                    android:textSize="22dp"/>
+
+                <TextView
+                    android:textColor="@color/new_text_light"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/tv_totalTime"
+                    android:text="Loading..."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nexab"
+                    android:textSize="18dp"/>
+                <TextView
+                    android:textColor="@color/new_text_light"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:id="@+id/tv_tree_number"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nexab"
+                    android:textSize="18dp"/>
+                <Space
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_width="wrap_content"
-        app:tint="@color/white"
+        </LinearLayout>
+<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        app:tint="@color/white"-->
+<!--        android:textSize="15dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:id="@+id/btn_start"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:text=" New Session"-->
+<!--        android:fontFamily="@font/nexab"-->
+<!--        app:backgroundTint="@color/lightgray"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:drawableTint="@color/white"-->
+<!--        android:drawablePadding="0dp"-->
+<!--        android:drawableRight="@drawable/ic_baseline_play_arrow_24"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:layout_height="wrap_content" />-->
+<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--        android:text="Progrress"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:id="@+id/btn_history"-->
+<!--        android:textSize="15dp"-->
+<!--        android:paddingStart="20dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:paddingEnd="20dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:drawableTint="@color/white"-->
+<!--        android:fontFamily="@font/nexab"-->
+<!--        android:drawablePadding="5dp"-->
+<!--        android:drawableRight="@drawable/ic_history"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/btn_prog_bg"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/ic_baseline_history_24"/>-->
+    <LinearLayout
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/btn_start"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:text="Start Session"
-        android:fontFamily="@font/nexab"
-        app:backgroundTint="@color/lightgray"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+                android:id="@+id/btn_start"
+            android:layout_weight="0.75"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:drawableTint="@color/white"
+            android:background="@drawable/home_left"
+            android:fontFamily="@font/nexab"
+            android:drawableBottom="@drawable/ic_baseline_play_arrow_24"
+            android:text="New Session"
+            android:layout_height="wrap_content"/>
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/btn_history"
+            android:textColor="@color/white"
+            android:drawableTint="@color/white"
+            android:background="@drawable/home_right"
+            android:fontFamily="@font/nexab"
+            android:drawableBottom="@drawable/ic_baseline_history_24"
+            android:layout_weight="1"
+            android:text="Progress"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </RelativeLayout>

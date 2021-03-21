@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Breatharmony</string>
     <string name="selected_item">Selected item:</string>
-    <string name="title">Hour:Mins</string>
-    <string-array name="Music">
-        <item>None</item>
-        <item>Rain</item>
-        <item>Space</item>
-    </string-array>
+    <string name="title">Hour : Mins</string>
+    <string name="notification">New Notification</string>
+    <string name="notification_channel_description">This is a sample notification channel for demonstration purpose.</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="u_stats_u"><u>Stats:</u></string>
 </resources>

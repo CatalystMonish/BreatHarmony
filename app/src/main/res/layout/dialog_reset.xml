@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:textColor="@color/dark"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:id="@+id/tv_reset_timer"
+        android:text="You are about to reset your Progress!!"
+        android:textSize="20dp"
+        android:fontFamily="@font/nexab"
+        android:layout_height="wrap_content"/>
+<LinearLayout
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="30dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/btn_reset_bg"
+        android:layout_width="wrap_content"
+        android:textColor="#fff"
+        android:id="@+id/btn_accept"
+        android:layout_height="wrap_content"
+        android:text="Accept"
+        android:fontFamily="@font/nexab"/>
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_login_bg"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btn_cancel"
+        android:fontFamily="@font/nexab"/>
+</LinearLayout>
+</LinearLayout>

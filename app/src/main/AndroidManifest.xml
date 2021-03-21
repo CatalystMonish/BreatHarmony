@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.catalystmedia.half_life">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,43 +12,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HalfLife">
-        <activity android:name=".PDFview"></activity>
-        <activity android:name=".SleepActivity" />
-        <activity android:name=".YogaActivity" />
+        <activity android:name=".TimerActivityNew"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".TypeSelectScreen"
-            android:theme="@style/Theme.HalfLife.NoActionBar" />
-        <activity android:name=".TimerCompleteScreen" />
-
-        <receiver
-            android:name=".TimerNotificationActionReceiver"
-            android:enabled="true"
-            android:exported="false" />
-        <receiver
-            android:name=".TimerExpiredReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="stop" />
-                <action android:name="pause" />
-                <action android:name="resume" />
-                <action android:name="start" />
-            </intent-filter>
-        </receiver>
-
-        <activity android:name=".TimerActivity" />
-        <activity android:name=".MeditationActivity" />
+            android:name=".NotificationChooser"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TimerCompleteScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HalfLife.White" /> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+        <activity
+            android:name=".MeditationActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".IntroductionActivity"
-            android:theme="@style/Theme.HalfLife.White" />
-        <activity android:name=".HistoryActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".HomeActivity" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HalfLife.Gray" />
+        <activity
+            android:name=".HistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.HalfLife.White" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HalfLife.Gray" />
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.HalfLife.White">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,6 +54,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".NotificationReceiver"
+            android:enabled="true"
+            android:process=":remote" />
     </application>
 
 </manifest>

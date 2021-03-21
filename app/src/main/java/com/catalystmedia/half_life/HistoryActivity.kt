@@ -1,7 +1,11 @@
 package com.catalystmedia.half_life
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.catalystmedia.half_life.adapters.HistoryAdapter
@@ -14,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_history.*
+import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -35,10 +40,31 @@ class HistoryActivity : AppCompatActivity(){
         historyAdapter = HistoryAdapter(this, itemList as ArrayList<History>)
         recyclerView.adapter = historyAdapter
         getHistory()
+        getTreeNumber()
+        val back: ImageView = findViewById(R.id.btn_back_history)
 
-        btn_back_history.setOnClickListener {
-            finish()
+        back.setOnClickListener {
+            val intent = Intent(this@HistoryActivity, HomeActivity::class.java)
+            startActivity(intent)
         }
+    }
+    private fun getTreeNumber() {
+        val user = FirebaseAuth.getInstance().currentUser
+        FirebaseDatabase.getInstance().reference.child("Users").child(user!!.uid)
+            .child("treesGrown").addValueEventListener(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if(snapshot.exists()){
+                        val numberTrees = snapshot.value.toString()
+                        tv_trees_grown_history.text = "Trees Grown $numberTrees"
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+
     }
     private fun getHistory() {
        val historyRef = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUser!!.uid.toString())

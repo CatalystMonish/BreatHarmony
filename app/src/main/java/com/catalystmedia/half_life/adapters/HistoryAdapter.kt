@@ -38,16 +38,23 @@ RecyclerView.Adapter<HistoryAdapter.ViewHolder>(){
         val item = mList[position]
         val date = item!!.getDate()
         val dayNumber = item!!.getDay()
+        val actualDay = dayNumber.toInt() + 1
         val timeMeditated = item!!.getTimeMeditated()
         val isComplete: Boolean = item!!.getGoalCompleted()
         val mood = item!!.getMood()
-        holder.timeMeditated.text = timeMeditated
+        if(timeMeditated == ""){
+            holder.timeMeditated.text = "0 mins"
+            holder.date.visibility = View.GONE
+        }
+        else {
+        holder.timeMeditated.text = "$timeMeditated mins"
+        }
         holder.date.text = date
-        if(dayNumber.toLong() < 10){
-            holder.dayNumber.text = "DAY 0$dayNumber"
+        if(actualDay.toLong() < 10){
+            holder.dayNumber.text = "DAY 0$actualDay"
         }
         else{
-            holder.dayNumber.text = "DAY $dayNumber"
+            holder.dayNumber.text = "DAY $actualDay"
         }
         holder.moodIcon.setImageResource(R.drawable.ic_baseline_tag_faces_24)
         if(isComplete){
@@ -55,6 +62,24 @@ RecyclerView.Adapter<HistoryAdapter.ViewHolder>(){
         }
         else if (!isComplete){
            holder.cardBg.setImageResource(R.drawable.history_red)
+        }
+        if(mood == "1"){
+            holder.moodIcon.setImageResource(R.drawable.ic_happy)
+        }
+        else if(mood == "2"){
+            holder.moodIcon.setImageResource(R.drawable.ic_love)
+        }
+        else if(mood == "3"){
+            holder.moodIcon.setImageResource(R.drawable.ic_kiss)
+        }
+        else if(mood == "4"){
+            holder.moodIcon.setImageResource(R.drawable.ic_sleepy)
+        }
+        else if(mood == "5"){
+            holder.moodIcon.setImageResource(R.drawable.ic_crying)
+        }
+        else{
+            holder.moodIcon.setImageResource(R.drawable.ic_crying)
         }
     }
 

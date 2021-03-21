@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
     <LinearLayout
-        android:background="#161d6f"
+        android:background="@color/dark_blue_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -33,25 +33,38 @@
             android:textSize="22sp"
             android:fontFamily="@font/nexab"/>
     </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_notif_settings"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/nexab"
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:text="Rate Us"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_reset"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/nexab"
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:textColor="#E10F08"
+        android:text="RESET ACCOUNT"
+        android:padding="20dp"
+        android:layout_height="wrap_content"/>
     <Space
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="wrap_content"/>
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_reset"
-        android:fontFamily="@font/nexab"
-        android:layout_width="match_parent"
-        android:background="#E8E8E8"
-        android:textColor="#E10F08"
-        android:text="RESET ACCOUNT"
-        android:layout_height="50dp"
-        android:layout_centerInParent="true"/>
+
+
 <androidx.appcompat.widget.AppCompatButton
     android:id="@+id/btn_logout"
     android:fontFamily="@font/nexab"
     android:layout_width="match_parent"
-    android:background="#AFAFAF"
-    android:textColor="@color/dark"
+    android:background="@drawable/home_middle"
+    android:textColor="@color/white"
     android:text="logout"
     android:layout_height="50dp"
     android:layout_centerInParent="true"/>

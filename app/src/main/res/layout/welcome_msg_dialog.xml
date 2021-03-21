@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_bg_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+     android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:textSize="20dp"
+    android:text="HEY THERE"
+    android:textColor="@color/dark"
+    android:textAlignment="center"
+    android:fontFamily="@font/nexab"
+    android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/dialog_iv"
+            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+                android:src="@drawable/ic_tree_ded"
+                android:layout_gravity="center"/>
+<TextView
+    android:layout_marginTop="10dp"
+    android:layout_gravity="center"
+    android:lineSpacingExtra="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="You forgot to meditate for a day, your current tree withered away!\n
+Grow a new one now."
+    android:textColor="#595959"
+    android:textSize="20dp"
+    android:id="@+id/welcome_msg"
+    android:fontFamily="@font/nexab"
+    android:textAlignment="center"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/continue_ads_btn"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Continue"
+            android:padding="10dp"
+            android:background="@drawable/btn_login_bg"
+            android:fontFamily="@font/nexab"
+            android:gravity="center"
+            android:textColor="@color/light"
+            android:textSize="15sp"/>
+</LinearLayout>

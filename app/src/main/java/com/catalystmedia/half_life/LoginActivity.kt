@@ -95,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
                     //if user exists no hashmap already created
                     if (snapshot.exists()) {
                         Toast.makeText(this@LoginActivity, "Welcome Back!", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                        val intent = Intent(this@LoginActivity, IntroductionActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
@@ -106,7 +106,6 @@ class LoginActivity : AppCompatActivity() {
                         val userMap = HashMap<String, Any>()
                         userMap["fullname"] = name.toString().toLowerCase()
                         userMap["email"] = email.toString()
-                        userMap["treeGrowth"] = "0"
                         usersRef.child(userUid.toString()).setValue(userMap)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {

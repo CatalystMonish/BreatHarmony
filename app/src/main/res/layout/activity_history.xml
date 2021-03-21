@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".HistoryActivity">
     <LinearLayout
-      android:background="#161d6f"
+      android:background="@color/dark_blue_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -32,7 +33,30 @@
             android:textSize="22sp"
             android:fontFamily="@font/nexab"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_tree"/>
+    <TextView
+        android:background="@color/white"
+        android:id="@+id/tv_trees_grown_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trees Grown 0"
+        android:textSize="18dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/nexab"
+        android:textColor="#3C3C3C"/>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
         android:background="@color/white"
         android:id="@+id/recyler_history"
         android:layout_width="match_parent"

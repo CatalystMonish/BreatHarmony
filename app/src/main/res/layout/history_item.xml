@@ -19,14 +19,14 @@
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/history_red"/>
+        android:src="@drawable/history_green"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
     <LinearLayout
         android:layout_weight="1"
-        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
         android:layout_marginStart="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DAY 00"
-        android:fontFamily="@font/main"
+        android:fontFamily="@font/nexab"
         android:textSize="20dp"/>
     <TextView
         android:textColor="@color/black"
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00/00/00"
-        android:fontFamily="@font/main"
+        android:fontFamily="@font/nexab"
         android:textSize="17dp"/>
     </LinearLayout>
         <TextView
@@ -55,18 +55,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="00mins"
-            android:fontFamily="@font/main"
+            android:fontFamily="@font/nexab"
             android:textSize="20dp"
             android:layout_marginEnd="20dp"/>
         <ImageView
             android:id="@+id/mood_icon"
-            android:scaleType="centerInside"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_baseline_tag_faces_24"
+            android:src="@drawable/ic_happy"
             android:layout_gravity="center"
-            android:layout_marginEnd="30dp"
-            app:tint="@color/black" />
+            android:layout_marginEnd="30dp"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
